@@ -1,0 +1,3 @@
+Hello, File Handling in Java!
+Line 2: Java I/O
+Line 3: Appended text.
