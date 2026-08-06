@@ -13,7 +13,8 @@ A professional and well-structured Java lab repository for MCA Semester 2, cover
 This repository contains 10 practical Java programs focused on:
 
 - File Handling
-- Sorting and Searching
+- Sorting
+- Searching
 - Matrix Operations
 - Exception Handling
 - Multithreading
@@ -77,4 +78,4 @@ java ObjectSerializationDemo
 
 ## ✨ Author
 
-Ravi Kumar
+Ravi Karmakar ❤️

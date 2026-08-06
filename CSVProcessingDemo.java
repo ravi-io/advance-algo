@@ -8,18 +8,20 @@ public class CSVProcessingDemo {
 
     static class Student {
         String name;
-        int age;
-        String course;
+        String email;
+        String program;
+        double gpa;
 
-        Student(String name, int age, String course) {
+        Student(String name, String email, String program, double gpa) {
             this.name = name;
-            this.age = age;
-            this.course = course;
+            this.email = email;
+            this.program = program;
+            this.gpa = gpa;
         }
 
         @Override
         public String toString() {
-            return name + ", age=" + age + ", course=" + course;
+            return name + ", email=" + email + ", program=" + program + ", gpa=" + gpa;
         }
     }
 
@@ -39,8 +41,12 @@ public class CSVProcessingDemo {
                 }
 
                 String[] parts = line.split(",");
-                if (parts.length >= 3) {
-                    students.add(new Student(parts[0], Integer.parseInt(parts[1]), parts[2]));
+                if (parts.length >= 5) {
+                    String name = parts[1].trim();
+                    String email = parts[2].trim();
+                    String program = parts[3].trim();
+                    double gpa = Double.parseDouble(parts[4].trim());
+                    students.add(new Student(name, email, program, gpa));
                 }
             }
         }
