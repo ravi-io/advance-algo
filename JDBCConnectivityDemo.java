@@ -9,9 +9,9 @@ public class JDBCConnectivityDemo {
     // Time complexity is O(1) for connection setup and O(n) for query execution.
     // Space complexity is O(1) apart from result storage.
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/testdb";
-        String user = "root";
-        String password = "password";
+          String url = "jdbc:mysql://localhost:3306/testdb";
+          String user = "javauser";  
+          String password = "java123";
 
         try {
             // Load the JDBC driver for MySQL.
