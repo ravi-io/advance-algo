@@ -1,5 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -22,15 +24,43 @@ public class JDBCConnectivityDemo {
 
                 System.out.println("Database connected successfully.");
 
-                // Example SQL statement.
-                String sql = "CREATE TABLE IF NOT EXISTS students (id INT PRIMARY KEY, name VARCHAR(50))";
-                statement.executeUpdate(sql);
+                // Ensure the student table exists with the expected columns.
+                String createSql = "CREATE TABLE IF NOT EXISTS student (id INT PRIMARY KEY, name VARCHAR(50), course VARCHAR(50), reg_no INT)";
+                statement.executeUpdate(createSql);
                 System.out.println("Table checked/created successfully.");
+
+                // Query and print all rows from the student table.
+                String querySql = "SELECT * FROM student";
+                try (ResultSet resultSet = statement.executeQuery(querySql)) {
+                    ResultSetMetaData metaData = resultSet.getMetaData();
+                    int columnCount = metaData.getColumnCount();
+
+                    // Print header row.
+                    for (int i = 1; i <= columnCount; i++) {
+                        System.out.print(metaData.getColumnLabel(i));
+                        if (i < columnCount) {
+                            System.out.print(" | ");
+                        }
+                    }
+                    System.out.println();
+                    System.out.println("--------------------------------------------");
+
+                    // Print each row.
+                    while (resultSet.next()) {
+                        for (int i = 1; i <= columnCount; i++) {
+                            System.out.print(resultSet.getString(i));
+                            if (i < columnCount) {
+                                System.out.print(" | ");
+                            }
+                        }
+                        System.out.println();
+                    }
+                }
             }
         } catch (ClassNotFoundException e) {
             System.out.println("JDBC Driver not found: " + e.getMessage());
         } catch (SQLException e) {
-            System.out.println("Database connection failed: " + e.getMessage());
+            System.out.println("Database error: " + e.getMessage());
         }
     }
 }
