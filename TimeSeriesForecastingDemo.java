@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Program 20: Time-Series Forecasting in Java

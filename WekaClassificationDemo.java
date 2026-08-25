@@ -2,10 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Program 19: Machine Learning Classification using Weka in Java
@@ -79,6 +77,7 @@ public class WekaClassificationDemo {
             this.classIndex = classIndex;
         }
 
+        public String getRelationName() { return relationName; }
         public List<Attribute> getAttributes() { return attributes; }
         public List<Instance> getInstances() { return instances; }
         public int size() { return instances.size(); }

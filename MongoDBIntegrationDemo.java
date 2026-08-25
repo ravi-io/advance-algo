@@ -305,15 +305,13 @@ public class MongoDBIntegrationDemo {
                         String sortField = sortEntry.getKey();
                         int direction = (Integer) sortEntry.getValue();
                         currentStageDocs.sort((d1, d2) -> {
-                            Comparable v1 = (Comparable) d1.get(sortField);
-                            Comparable v2 = (Comparable) d2.get(sortField);
+                            @SuppressWarnings("unchecked")
+                            Comparable<Object> v1 = (Comparable<Object>) d1.get(sortField);
+                            @SuppressWarnings("unchecked")
+                            Comparable<Object> v2 = (Comparable<Object>) d2.get(sortField);
                             if (v1 == null || v2 == null)
                                 return 0;
-                            return direction >= 0 ? v1.c16. Write a program to integrate Java with MongoDB.
-17. Write a program for sentiment analysis with Java.
-18. Write a program for recommendation system.
-19. Write a program for classification using Weka in Java.
-20. Write a program for time-series forecasting in Java.ompareTo(v2) : v2.compareTo(v1);
+                            return direction >= 0 ? v1.compareTo(v2) : v2.compareTo(v1);
                         });
                     }
                 }
