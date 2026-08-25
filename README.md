@@ -10,7 +10,7 @@ A professional and well-structured Java lab repository for MCA Semester 2, cover
 
 ## 📌 Project Overview
 
-This repository contains **15 practical Java programs** focused on:
+This repository contains **20 practical Java programs** focused on:
 
 - File Handling
 - Sorting Algorithms
@@ -27,6 +27,11 @@ This repository contains **15 practical Java programs** focused on:
 - Association Rule Mining (Apriori Algorithm)
 - Text Mining (TF-IDF & Cosine Similarity)
 - Data Visualization using JavaFX
+- MongoDB Integration (NoSQL Document Store & Aggregation)
+- Sentiment Analysis (Lexicon Engine & Naive Bayes NLP)
+- Recommendation System (Collaborative & Content-Based Filtering)
+- Classification using Weka (J48 Decision Trees & Evaluation)
+- Time-Series Forecasting (Moving Average, Exponential Smoothing & Holt's Trend)
 
 ---
 
@@ -49,6 +54,11 @@ This repository contains **15 practical Java programs** focused on:
 | 13  | Association Rule Mining  | [AssociationRuleMiningDemo.java](AssociationRuleMiningDemo.java)   |
 | 14  | Text Mining              | [TextMiningDemo.java](TextMiningDemo.java)                         |
 | 15  | JavaFX Data Visualization| [VisualizationJavaFXDemo.java](VisualizationJavaFXDemo.java)       |
+| 16  | MongoDB Integration      | [MongoDBIntegrationDemo.java](MongoDBIntegrationDemo.java)         |
+| 17  | Sentiment Analysis       | [SentimentAnalysisDemo.java](SentimentAnalysisDemo.java)           |
+| 18  | Recommendation System    | [RecommendationSystemDemo.java](RecommendationSystemDemo.java)     |
+| 19  | Weka Classification      | [WekaClassificationDemo.java](WekaClassificationDemo.java)         |
+| 20  | Time-Series Forecasting  | [TimeSeriesForecastingDemo.java](TimeSeriesForecastingDemo.java)   |
 
 ---
 
@@ -56,9 +66,9 @@ This repository contains **15 practical Java programs** focused on:
 
 ### 1. Compile programs
 
-Standard Java programs (1–14):
+Standard Java programs (1–14, 16–20):
 ```bash
-javac FileHandling.java SortingAlgorithms.java SearchingTechniques.java MatrixOperations.java ExceptionHandlingDemo.java MultithreadingDemo.java JavaCollectionsDemo.java JDBCConnectivityDemo.java CSVProcessingDemo.java ObjectSerializationDemo.java RegressionAnalysisDemo.java ClusteringDemo.java AssociationRuleMiningDemo.java TextMiningDemo.java
+javac FileHandling.java SortingAlgorithms.java SearchingTechniques.java MatrixOperations.java ExceptionHandlingDemo.java MultithreadingDemo.java JavaCollectionsDemo.java JDBCConnectivityDemo.java CSVProcessingDemo.java ObjectSerializationDemo.java RegressionAnalysisDemo.java ClusteringDemo.java AssociationRuleMiningDemo.java TextMiningDemo.java MongoDBIntegrationDemo.java SentimentAnalysisDemo.java RecommendationSystemDemo.java WekaClassificationDemo.java TimeSeriesForecastingDemo.java
 ```
 
 JavaFX Visualization program (15):
@@ -88,6 +98,11 @@ java ClusteringDemo
 java AssociationRuleMiningDemo
 java TextMiningDemo
 java VisualizationJavaFXDemo
+java MongoDBIntegrationDemo
+java SentimentAnalysisDemo
+java RecommendationSystemDemo
+java WekaClassificationDemo
+java TimeSeriesForecastingDemo
 ```
 
 ---
@@ -114,6 +129,26 @@ java VisualizationJavaFXDemo
 5. **Data Visualization ([VisualizationJavaFXDemo.java](VisualizationJavaFXDemo.java))**:
    - JavaFX GUI application rendering interactive `BarChart` (algorithm execution speeds) and `LineChart` (time complexity growth curves $O(N \log N)$ vs $O(N^2)$). Includes console summary fallback.
    - Time Complexity: $O(N)$, Space Complexity: $O(N)$.
+
+6. **MongoDB Integration ([MongoDBIntegrationDemo.java](MongoDBIntegrationDemo.java))**:
+   - Demonstrates NoSQL document modeling, CRUD operations (Insert, Find with filters/projections, Update `$set`/`$inc`, Delete), indexing, and Aggregation Pipelines (`$match`, `$group`, `$sort`). Standard MongoDB Java Driver API usage pattern is documented.
+   - Time Complexity: $O(1)$ for indexed primary key lookup, $O(N)$ for unindexed collection scans. Space Complexity: $O(N)$.
+
+7. **Sentiment Analysis ([SentimentAnalysisDemo.java](SentimentAnalysisDemo.java))**:
+   - Implements Lexicon-based Sentiment Engine with Negation handling (sliding window inversion) and Intensifier score boosting, paired with a Multinomial Naive Bayes Machine Learning Sentiment Classifier with Laplace smoothing.
+   - Time Complexity: $O(N \cdot W)$ preprocessing and classification. Space Complexity: $O(V + N)$.
+
+8. **Recommendation System ([RecommendationSystemDemo.java](RecommendationSystemDemo.java))**:
+   - Implements User-Based Collaborative Filtering (Pearson correlation coefficient $r$), Item-Based Collaborative Filtering, and Content-Based Filtering (genre feature vectors). Computes Top-K recommendations and evaluation metrics (MAE & RMSE).
+   - Time Complexity: $O(U^2 \cdot I)$ for user similarity, $O(U \cdot I^2)$ for item similarity. Space Complexity: $O(U \cdot I)$.
+
+9. **Weka Machine Learning Classification ([WekaClassificationDemo.java](WekaClassificationDemo.java))**:
+   - Implements Weka data structures (`Attribute`, `Instance`, `Instances`) with a Decision Tree Classifier (Weka J48 / ID3 with Information Gain) and model evaluation engine generating Confusion Matrix, Accuracy, Precision, Recall, and F1-Score. Weka API usage is documented.
+   - Time Complexity: $O(N \cdot D)$ for dataset size $N$ and attribute count $D$. Space Complexity: $O(N \cdot D)$.
+
+10. **Time-Series Forecasting ([TimeSeriesForecastingDemo.java](TimeSeriesForecastingDemo.java))**:
+    - Implements statistical time-series forecasting models: Simple Moving Average (SMA), Single Exponential Smoothing (SES), Holt's Double Exponential Smoothing (Linear Trend Model), and Auto-Regressive lag models. Computes error metrics (MAE, MSE, RMSE, MAPE %) and renders terminal ASCII forecast plots.
+    - Time Complexity: $O(N \cdot p)$ for series length $N$ and window/lag size $p$. Space Complexity: $O(N)$.
 
 ---
 
