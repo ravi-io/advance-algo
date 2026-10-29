@@ -4,19 +4,18 @@ public class SentimentAnalysis {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String[] positive = { "good", "nice", "rich", "happy", "love" };
-        String[] negative = { "bad", "poor", "sad", "hate" };
-
-        System.out.print("Enter a sentence: ");
-        String text = sc.nextLine().toLowerCase();
+        String[] positive = { "good", "rich" };
+        String[] negative = { "bad", "poor" };
 
         int score = 0;
+
+        System.out.print("Enter a Sentence: ");
+        String text = sc.nextLine().toLowerCase();
 
         for (String word : positive) {
             if (text.contains(word))
                 score++;
         }
-
         for (String word : negative) {
             if (text.contains(word))
                 score--;
@@ -25,7 +24,7 @@ public class SentimentAnalysis {
         if (score > 0)
             System.out.println("Sentiment : Positive");
         else if (score < 0)
-            System.out.println("Sentment : Negative");
+            System.out.println("Sentiment : Negative");
         else
             System.out.println("Sentiment : Neutral");
 

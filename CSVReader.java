@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,13 +8,13 @@ public class CSVReader {
         String line;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
 
                 for (String value : data) {
                     System.out.print(value + "\t");
                 }
+
                 System.out.println();
             }
 
